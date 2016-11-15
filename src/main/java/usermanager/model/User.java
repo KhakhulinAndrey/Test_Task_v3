@@ -3,7 +3,7 @@ package usermanager.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user", schema = "test1")
+@Table(name = "user")
 public class User {
     @Id
     @Column(name = "ID")
@@ -15,6 +15,17 @@ public class User {
 
     @Column(name = "AGE")
     private int age;
+
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 
     public int getId() {
         return id;

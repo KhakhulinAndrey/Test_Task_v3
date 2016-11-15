@@ -60,6 +60,7 @@
             <th width="80">ID</th>
             <th width="120">Name</th>
             <th width="120">Age</th>
+            <th width="120">Admin</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
         </tr>
@@ -68,6 +69,7 @@
                 <td>${user.id}</td>
                 <td><a href="/userdata/${user.id}" target="_blank">${user.name}</a></td>
                 <td>${user.age}</td>
+                <td>${user.isAdmin}</td>
                 <td><a href="<c:url value='/edit/${user.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/remove/${user.id}'/>">Delete</a></td>
             </tr>
@@ -96,12 +98,12 @@
         </c:if>
         <tr>
             <td>
-                <form:label path="userName">
+                <form:label path="name">
                     <spring:message text="Name"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="userName"/>
+                <form:input path="name"/>
             </td>
         </tr>
 
@@ -115,15 +117,27 @@
                 <form:input path="age"/>
             </td>
         </tr>
+
+        <tr>
+            <td>
+                <form:checkbox path="isAdmin">
+
+                </form:checkbox>
+            </td>
+            <td>
+                <form:input path="isAdmin"/>
+            </td>
+        </tr>
+
         <tr>
             <td colspan="2">
                 <c:if test="${!empty user.name}">
                     <input type="submit"
-                           value="<spring:message text="Edit Book"/>"/>
+                           value="<spring:message text="Edit User"/>"/>
                 </c:if>
                 <c:if test="${empty user.name}">
                     <input type="submit"
-                           value="<spring:message text="Add Book"/>"/>
+                           value="<spring:message text="Add User"/>"/>
                 </c:if>
             </td>
         </tr>
