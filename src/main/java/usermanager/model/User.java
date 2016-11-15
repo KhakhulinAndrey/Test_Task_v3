@@ -3,7 +3,7 @@ package usermanager.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user", schema = "test1")
 public class User {
     @Id
     @Column(name = "ID")
