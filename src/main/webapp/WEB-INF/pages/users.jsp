@@ -61,6 +61,7 @@
             <th width="120">Name</th>
             <th width="120">Age</th>
             <th width="120">Admin</th>
+            <th width="120">Created Date</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
         </tr>
@@ -70,6 +71,7 @@
                 <td><a href="/userdata/${user.id}" target="_blank">${user.name}</a></td>
                 <td>${user.age}</td>
                 <td>${user.isAdmin}</td>
+                <td>${user.createdDate}</td>
                 <td><a href="<c:url value='/edit/${user.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/remove/${user.id}'/>">Delete</a></td>
             </tr>
@@ -95,6 +97,17 @@
                     <form:hidden path="id"/>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <form:label path="createdDate">
+                        <spring:message text="Date"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="createdDate" readonly="true" size="15" disabled="true"/>
+                    <form:hidden path="createdDate"/>
+                </td>
+            </tr>
         </c:if>
         <tr>
             <td>
@@ -110,7 +123,7 @@
         <tr>
             <td>
                 <form:label path="age">
-                    <spring:message text="Age"/>
+                    <spring:message text="Age "/>
                 </form:label>
             </td>
             <td>
@@ -119,14 +132,8 @@
         </tr>
 
         <tr>
-            <td>
-                <form:checkbox path="isAdmin">
-
-                </form:checkbox>
-            </td>
-            <td>
-                <form:input path="isAdmin"/>
-            </td>
+            <td>Admin </td>
+            <td><form:checkbox path="isAdmin" /></td>
         </tr>
 
         <tr>

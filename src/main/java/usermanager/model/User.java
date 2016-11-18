@@ -1,23 +1,36 @@
 package usermanager.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "NAME")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "AGE")
+    @Column(name = "age")
     private int age;
 
     @Column(name = "isAdmin")
     private boolean isAdmin;
+
+    @Column(name = "createdDate")
+    private Date createdDate;
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
 
     public boolean isIsAdmin() {
         return isAdmin;

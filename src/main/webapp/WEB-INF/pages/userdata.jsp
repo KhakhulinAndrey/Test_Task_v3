@@ -49,18 +49,22 @@
 
 </head>
 <body>
-<h1>Book Details</h1>
+<h1>User Details</h1>
 
 <table class="tg">
     <tr>
         <th width="80">ID</th>
         <th width="120">Name</th>
         <th width="120">Age</th>
+        <th width="120">Admin</th>
+        <th width="120">Created Date</th>
     </tr>
     <tr>
         <td>${user.id}</td>
         <td>${user.name}</td>
         <td>${user.age}</td>
+        <td>${user.isAdmin}</td>
+        <td>${user.createdDate}</td>
     </tr>
 </table>
 </body>
