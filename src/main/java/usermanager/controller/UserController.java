@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
 import usermanager.model.User;
 import usermanager.service.UserService;
 
@@ -61,4 +59,21 @@ public class   UserController {
         model.addAttribute("user", this.userService.getUserById(id));
         return "userdata";
     }
+
+
+    @RequestMapping(value = "/search/")
+    public String search(@RequestParam("searchString") String searchString, Model model) {
+
+
+            model.addAttribute("findList", this.userService.search(searchString));
+            return "search";
+
+    }
+
+
+
+
+
+
+
 }

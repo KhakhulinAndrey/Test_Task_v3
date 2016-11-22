@@ -17,4 +17,6 @@ public interface UserService {
     public User getUserById(int id);
 
     public List<User> listUsers();
+
+    public List<User> search(String text);
 }

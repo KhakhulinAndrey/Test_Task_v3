@@ -150,5 +150,17 @@
         </tr>
     </table>
 </form:form>
+
+<h1>Search User</h1>
+
+
+<form action="/search/">
+    <label for="searchString">Name:</label>
+    <input  type="text" id="searchString" name="searchString" />
+    <br/>
+    <br/>
+    <input type="submit" formtarget="_blank" value="Search"/>
+</form>
+
 </body>
 </html>

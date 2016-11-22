@@ -46,4 +46,10 @@ public class UserServiceImpl implements UserService{
     public List<User> listUsers() {
         return this.userDao.listUsers();
     }
+
+    @Override
+    @Transactional
+    public List<User> search(String text) {
+        return this.userDao.search(text);
+    }
 }

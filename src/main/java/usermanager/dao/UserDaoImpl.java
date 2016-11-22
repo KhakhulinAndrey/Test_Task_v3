@@ -64,4 +64,14 @@ public class UserDaoImpl implements UserDao {
             logger.info("User list: " + user);
         return userList;
     }
+
+
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<User> search(String text) {
+        Session session = this.sessionFactory.getCurrentSession();
+        List<User> findList = (List<User>) session.createQuery(String.format("from User where name like '%%%s%%'", text)).list();
+        return findList;
+    }
 }
